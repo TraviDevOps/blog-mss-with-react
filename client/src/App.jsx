@@ -1,6 +1,10 @@
+import PostCreate from "./components/post/PostCreate";
 
-const App = () => {
-    return <div>Blog app</div>;
+function App() {
+    return <div className="container">
+        <h1>Create Post</h1>
+        <PostCreate />
+    </div>;
 };
 
 export default App;
