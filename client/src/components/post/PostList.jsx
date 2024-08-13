@@ -25,7 +25,6 @@ function PostList() {
                     <CommentList postId={post.id} />
                     <CommentCreate postId={post.id} />
                 </div>
-
             </div>
         )
 
