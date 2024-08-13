@@ -9,7 +9,7 @@ function PostCreate() {
     const onSubmit = async (event) => {
         event.preventDefault();
 
-        await axios.post(postsMicroserviceUrl, { title });
+        await axios.post(`${postsMicroserviceUrl}/posts`, { title });
 
         setTitle('');
     }
