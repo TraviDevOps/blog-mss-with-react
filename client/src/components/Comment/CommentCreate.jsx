@@ -5,7 +5,7 @@ function CommentCreate({ postId }) {
     const [content, setContent] = useState('');
     const commentsMicroserviceUrl = import.meta.env.VITE_COMMENTS_MICROSERVICE_URL;
 
-    const onSubmit = async (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
         await axios.post(`${commentsMicroserviceUrl}/posts/${postId}/comments`, { content });
@@ -14,7 +14,7 @@ function CommentCreate({ postId }) {
     }
 
     return (
-        <form onSubmit={onSubmit}>
+        <form onSubmit={handleSubmit}>
             <div className="form-group">
                 <label>New Comment</label>
                 <input

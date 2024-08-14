@@ -5,7 +5,7 @@ import CommentList from "../Comment/CommentList";
 
 function PostList() {
     const [posts, setPosts] = useState({});
-    const postsMicroserviceUrl = import.meta.env.VITE_POSTS_MICROSERVICE_URL;
+    const postsMicroserviceUrl = import.meta.env.VITE_QUERY_SERVICE_URL;
 
     const fetchPosts = async () => {
         const response = await axios.get(`${postsMicroserviceUrl}/posts`);
@@ -22,7 +22,7 @@ function PostList() {
             <div className="card" style={{ width: '30%', marginBottom: '20px' }} key={post.id}>
                 <div className="card-body">
                     <h3>{post.title}</h3>
-                    <CommentList postId={post.id} />
+                    <CommentList comments={post.comments} />
                     <CommentCreate postId={post.id} />
                 </div>
             </div>
