@@ -11,7 +11,7 @@ app.post('/events', async (req, res) => {
     if (type === 'CommentCreated') {
         const status = moderateComment(data.content);
 
-        await axios.post(process.env.EVENT_BUS_URL, {
+        await axios.post(`${process.env.MESSAGE_BROKER_URL}/events`, {
             type: 'CommentModerated',
             data: {
                 id: data.id,
