@@ -54,7 +54,7 @@ app.post('/events', async (req, res) => {
             });
             comment.status = status;
 
-            await axios.post(process.env.MESSAGE_BROKER_URL, {
+            await axios.post(`${process.env.MESSAGE_BROKER_URL}/events`, {
                 type: 'CommentUpdated',
                 data: {
                     id,
