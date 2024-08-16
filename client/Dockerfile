@@ -6,4 +6,4 @@ RUN npm install
 COPY . .
 COPY .env .
 
-CMD ["npm", "start"]
+CMD ["npm", "run dev"]
