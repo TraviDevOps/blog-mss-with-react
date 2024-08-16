@@ -8,7 +8,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-const posts = {}; // this will act as our database in this example
+const posts = {}; // this will act as our mock database in this example
 
 app.get('/posts', (req, res) => {
     res.send(posts);
